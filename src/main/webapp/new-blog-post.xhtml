@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="template.xhtml">
+
+	<ui:define name="header">
+		<h1>
+			Add Post for <h:outputText value="#{selectedBlog.name}"/>
+		</h1>
+	</ui:define>
+	<ui:define name="content">
+		<h:form id="content">
+			<input type="hidden" name="selectedBlogId" value="#{selectedBlog.blogId}"  />
+			<table class="new-blog-post-table">
+				<tr>
+					<td valign="top">Title:</td>
+					<td><h:inputText value="#{newBlogPost.title}" /></td>
+				</tr>
+				<tr>
+					<td valign="top">Body:</td>
+					<td><h:inputTextarea value="#{newBlogPost.body}" rows="20"
+							cols="50" /></td>
+				</tr>
+				<tr>
+					<td valign="top"></td>
+					<td><h:commandButton action="#{blogManager.addBlogPost}"
+							value="Add Post" /></td>
+				</tr>
+			</table>
+		</h:form>
+	</ui:define>
+	<ui:define name="actions">
+		<h:form id="actions">
+			<h:link styleClass="button" outcome="cancel" value="Cancel">
+				<f:param name="selectedBlogId" value="#{selectedBlog.blogId}" />
+			</h:link>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

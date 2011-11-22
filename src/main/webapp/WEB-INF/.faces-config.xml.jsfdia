@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#new-blog.xhtml" PATH="/new-blog.xhtml"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#new-blog.xhtml:0" NAME="item"
+   PATH="/new-blog.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="success:#{blogManager.addBlog}:#index.xhtml"
+    NAME="output" PATH="/index.xhtml" SHAPE="-1,16"
+    TARGET="rules:#index.xhtml" TITLE="#{blogManager.addBlog}:success" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="back::#index.xhtml" NAME="output1"
+    PATH="/index.xhtml" SHAPE="-1,16" TARGET="rules:#index.xhtml"
+    TITLE="back" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="failure:#{blogManager.addBlog}:#new-blog.xhtml" NAME="output2"
+    PATH="/new-blog.xhtml" TARGET="rules:#new-blog.xhtml"
+    TITLE="#{blogManager.addBlog}:failure" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="344,32,50,57" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#index.xhtml:0" NAME="item"
+   PATH="/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="new-blog::#new-blog.xhtml" NAME="output"
+    PATH="/new-blog.xhtml" SHAPE="-1,16" TARGET="rules:#new-blog.xhtml"
+    TITLE="new-blog" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="view-blog::#view-blog.xhtml" NAME="output1"
+    PATH="/view-blog.xhtml" SHAPE="-1,16"
+    TARGET="rules:#view-blog.xhtml" TITLE="view-blog" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#view-blog.xhtml" PATH="/view-blog.xhtml"
+  SHAPE="696,208,50,57" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#view-blog.xhtml:0" NAME="item"
+   PATH="/view-blog.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#index.xhtml" NAME="output"
+    PATH="/index.xhtml" SHAPE="-1,16" TARGET="rules:#index.xhtml"
+    TITLE="back" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{blogManager.deleteBlog}:#index.xhtml" NAME="output2"
+    PATH="/index.xhtml" TARGET="rules:#index.xhtml"
+    TITLE="#{blogManager.deleteBlog}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#new-blog-post.xhtml"
+  PATH="/new-blog-post.xhtml" SHAPE="456,328,50,57" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#new-blog-post.xhtml:0" NAME="item"
+   PATH="/new-blog-post.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{blogManager.addBlogPost}:#view-blog.xhtml"
+    NAME="output" PATH="/view-blog.xhtml"
+    TARGET="rules:#view-blog.xhtml"
+    TITLE="#{blogManager.addBlogPost}:success" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="cancel::#view-blog.xhtml" NAME="output1"
+    PATH="/view-blog.xhtml" TARGET="rules:#view-blog.xhtml"
+    TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>
