@@ -79,7 +79,7 @@
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:datasources:1.0">
             <datasources>
-                <datasource jndi-name="java:jboss/datasources/ExampleDS" enabled="${mysql.enabled}" use-java-context="true" pool-name="MysqlDS">
+                <datasource jndi-name="java:jboss/datasources/BlogDS" enabled="${mysql.enabled}" use-java-context="true" pool-name="BlogPool">
                     <connection-url>jdbc:mysql://${OPENSHIFT_DB_HOST}:${OPENSHIFT_DB_PORT}/${OPENSHIFT_APP_NAME}</connection-url>
                     <driver>mysql</driver>
                     <security>
@@ -87,10 +87,7 @@
                       <password>${OPENSHIFT_DB_PASSWORD}</password>
                     </security>
                 </datasource>
-                <drivers>
-                    <driver name="h2" module="com.h2database.h2">
-                        <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
-                    </driver>
+                <drivers>              
                     <driver name="mysql" module="com.mysql.jdbc">
                         <xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
                     </driver>
